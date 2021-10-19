@@ -1,0 +1,31 @@
+<!--<button (click)="sendMessage()" class="btn btn-primary">Send Message</button>
+<button (click)="clearMessages()" class="btn btn-secondary">Clear Messages</button>
+
+   {{ selected }}
+  <div *ngIf="selected; else thenBlock1">
+    <p>You are selected</p>
+  </div>
+
+  <ng-template [ngIf]="selected">
+    <div>
+      <p>You are selected</p>
+    </div>
+  </ng-template>
+  <ng-template #testTemplate>
+    <div>
+        <p>Test Template selected</p>
+    </div>
+  </ng-template>
+  <ng-template #thenBlock1>
+    <p>content to render when the selected is false.</p>
+  </ng-template>-->
+  <label>
+    <input [(ngModel)]="selected" type="checkbox">Select Me
+  </label>
+  <ng-container
+   *ngIf="selected">
+    <div *ngFor="let item of items">
+         {{item.name}}
+    </div>
+  </ng-container>
+  <app-parent></app-parent>
